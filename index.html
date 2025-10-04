@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta property="og:title" content="정훈과 지인의 결혼식에 초대합니다">
+    <meta property="og:description" content="2025년 11월 08일 토요일 오전 8시 30분, 서울시립대 자작마루">
+    <meta property="og:image" content="./images/thumbnail.jpg">
+    <title>정훈 & 지인</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="section main">
+            <img src="./images/main.jpg" alt="메인 웨딩 사진" class="main-photo">
+            <div class="main-text">
+                <h1>정훈 & 지인</h1>
+                <p>2025. 11. 08. SAT AM 11:30</p>
+                <p>서울시립대 자작마루</p>
+            </div>
+        </div>
+
+        <div class="section rsvp scroll-animate">
+            <h2 class="section-title">참석 의사 전달</h2>
+            <p>소중한 분들을 귀히 모시고자 합니다.<br>참석하시어 자리를 빛내주시길 바랍니다.</p>
+            <form id="rsvp-form" action="https://formspree.io/f/xeokajqe" method="POST">
+                <fieldset>
+                    <legend>하객 정보</legend>
+                    <div class="form-group">
+                        <label for="name">성함</label>
+                        <input type="text" id="name" name="성함" required>
+                    </div>
+                    <div class="form-group">
+                        <label>주차권 필요 여부</label>
+                        <div class="choice-group">
+                            <input type="radio" id="parking-yes" name="주차권" value="필요">
+                            <label for="parking-yes">예</label>
+                            <input type="radio" id="parking-no" name="주차권" value="불필요" checked>
+                            <label for="parking-no">아니요</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>대전 출발 버스 탑승 여부 <span class="label-detail">(11/8 오전 9:10, 탄방역)</span></label>
+                        <div class="choice-group">
+                            <input type="radio" id="daejeon-bus-yes" name="대전버스" value="탑승">
+                            <label for="daejeon-bus-yes">예</label>
+                            <input type="radio" id="daejeon-bus-no" name="대전버스" value="미탑승" checked>
+                            <label for="daejeon-bus-no">아니요</label>
+                        </div>
+                    </div>
+                    <div class="form-group count-group hidden" id="bus-count-wrapper">
+                        <label for="bus-guests">탑승 인원 (본인 포함)</label>
+                        <select id="bus-guests" name="대전버스탑승인원">
+                            <option value="1">1명</option>
+                            <option value="2">2명</option>
+                            <option value="3">3명</option>
+                            <option value="4">4명</option>
+                            <option value="5">5명</option>
+                            <option value="6">6명</option>
+                            <option value="7">7명</option>
+                            <option value="8">8명</option>
+                            <option value="9">9명</option>
+                            <option value="10">10명</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">신랑 신부에게 전하고 싶은 말</label>
+                        <input type="text" id="message" name="메시지">
+                    </div>
+                </fieldset>
+                <button type="submit" class="submit-btn">참석 의사 보내기</button>
+            </form>
+        </div>
+        <hr class="divider">
+        <div class="section invitation scroll-animate">
+            <h2 class="section-title">초대합니다</h2>
+            <p>
+                10년 전과 똑같이 설레는 마음으로 <br>
+                새로운 출발점에 섰습니다. <br>
+                가는 길에 나눌 이야깃거리, <br>
+                소중한 분들과 함께 만들고 싶습니다. <br>
+                11월 8일, 내딛는 발걸음을 응원해주세요.
+            </p>
+        </div>
+
+        <div class="section groom-bride scroll-animate">
+            <div>
+                <h3>신랑</h3>
+                <p>이정훈</p>
+            </div>
+            <div>
+                <h3>신부</h3>
+                <p>최지인</p>
+            </div>
+        </div>
+        <hr class="divider">
+
+        <div class="section calendar-section scroll-animate">
+            <h2 class="section-title">Wedding Day</h2>
+            <div id="calendar-wrapper">
+                <div class="calendar-header">
+                    <h3>2025년 11월</h3>
+                </div>
+                <div id="calendar"></div>
+            </div>
+            <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=%EC%A0%95%ED%9B%88%26%EC%A7%80%EC%9D%B8+%EA%B2%B0%ED%98%BC%EC%8B%9D&dates=20251108T023000Z/20251108T043000Z&details=%EC%A0%95%ED%9B%88%EA%B3%BC+%EC%A7%80%EC%9D%B8%EC%9D%98+%EA%B2%B0%ED%98%BC%EC%8B%9D%EC%97%90+%EC%B4%88%EB%8C%80%ED%95%A9%EB%8B%88%EB%8B%A4.&location=%EC%84%9C%EC%9A%B8%EC%8B%9C%EB%A6%BD%EB%8C%80+%EC%9E%90%EC%9E%91%EB%A7%88%EB%A3%A8, +%EC%84%9C%EC%9A%B8+%EB%8F%99%EB%8C%80%EB%AC%B8%EA%B5%AC+%EC%84%9C%EC%9A%B8%EC%8B%9C%EB%A6%BD%EB%8C%80%EB%A1%9C+163" target="_blank" class="calendar-btn">
+                <span>📅</span> Google Calendar에 추가
+            </a>
+        </div>
+        <hr class="divider">
+        
+        <section id="gallery" class="section scroll-animate">
+            <h2 class="section-title">사진들</h2>
+            <div class="gallery-scroll-container">
+                <div class="gallery-content">
+                    
+                    <div class="gallery-custom-grid">
+                        <div class="gallery-item gallery-item-large">
+                            <img src="./images/gallery1.jpg" alt="갤러리 사진 1">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./images/gallery2.jpg" alt="갤러리 사진 2">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./images/gallery3.jpg" alt="갤러리 사진 3">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./images/gallery4.jpg" alt="갤러리 사진 4">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./images/gallery5.jpg" alt="갤러리 사진 5">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="./images/gallery6.jpg" alt="갤러리 사진 6">
+                        </div>
+                    </div>
+
+                    <div class="gallery-custom-grid single-item-grid">
+                        <div class="gallery-item full-size-item">
+                            <img src="./images/gallery7.jpg" alt="갤러리 사진 7">
+                        </div>
+                    </div>
+
+                    <div class="gallery-custom-grid single-item-grid">
+                        <div class="gallery-item full-size-item">
+                            <img src="./images/gallery8.jpg" alt="갤러리 사진 8">
+                        </div>
+                    </div>
+
+                    <div class="gallery-custom-grid single-item-grid">
+                        <div class="gallery-item full-size-item">
+                            <img src="./images/gallery9.jpg" alt="갤러리 사진 9">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <div class="section location scroll-animate">
+            <h2 class="section-title">오시는 길</h2>
+            <p>서울시립대학교 자작마루</p>
+            <p>서울 동대문구 서울시립대로 163</p>
+            <div class="transport-info">
+                <div class="transport-item">
+                    <span class="transport-icon">🚇</span>
+                    <p>
+                        <strong>지하철 이용 시</strong><br>
+                        1호선, 경의중앙선, 경춘선 <b><br>
+                        회기역 2번 출구</b><br>
+                        <span>도보 약 15~20분 소요됩니다.</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div id="map"></div>
+            
+            <div class="map-buttons">
+                <a href="https://naver.me/FxFHbbBc" target="_blank" class="map-btn naver">네이버맵</a>
+                <a href="https://place.map.kakao.com/17563254" target="_blank" class="map-btn kakao">카카오맵</a>
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="section contact scroll-animate">
+            <h3 class="section-title">연락처</h3>
+            <div class="contact-row">
+                <p>신랑 및 신부</p>
+                <div class="parents-grid">
+                    <div class="parents"><p>신랑 이정훈</p><div class="call-buttons"><a href="tel:010-9732-2973" class="call-btn">📞</a><a href="sms:010-9732-2973" class="sms-btn">✉️</a></div></div>
+                    <div class="parents"><p>신부 최지인</p><div class="call-buttons"><a href="tel:010-4311-6559" class="call-btn">📞</a><a href="sms:010-4311-6559" class="sms-btn">✉️</a></div></div>
+                </div>
+            </div>
+            <div class="contact-row">
+                <p>신랑 측 혼주</p>
+                <div class="parents-grid">
+                    <div class="parents"><p>아버지 이병걸</p></div>
+                    <div class="parents"><p>어머니 박금주</p></div>
+                </div>
+            </div>
+            <div class="contact-row">
+                <p>신부 측 혼주</p>
+                <div class="parents-grid">
+                    <div class="parents"><p>아버지 최현수</p></div>
+                    <div class="parents"><p>어머니 강윤옥</p></div>
+                </div>
+            </div>
+        </div>
+        <hr class="divider">
+        
+        <div class="section account scroll-animate">
+            <h2 class="section-title">마음 전하실 곳</h2>
+            <div class="account-info">
+                <button class="account-btn" data-target="groom-account">신랑 측 계좌번호 보기</button>
+                <div id="groom-account" class="account-details"><p>수협은행 010097322973 <br> (예금주: 이정훈)</p><button class="copy-btn" data-clipboard-text="3120224866331">복사</button></div>
+                <button class="account-btn" data-target="bride-account">신부 측 계좌번호 보기</button>
+                <div id="bride-account" class="account-details"><p>토스뱅크 1001-7616-4124 <br> (예금주: 최지인(모임통장))</p><button class="copy-btn" data-clipboard-text="88091060616107">복사</button></div>
+            </div>
+        </div>
+
+        <div class="section footer scroll-animate">
+            <p>Made by Junghoon & Jiin </p>
+        </div>
+    </div>
+
+   <div id="submit-toast" class="toast-popup"></div>
+
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=913766d78e1aa9c59ae8f88df297a238&libraries=services"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+    <script src="script.js"></script>
+
+   <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const daejeonBusYes = document.getElementById('daejeon-bus-yes');
+            const daejeonBusNo = document.getElementById('daejeon-bus-no');
+            const busCountWrapper = document.getElementById('bus-count-wrapper');
+            const busGuestsSelect = document.getElementById('bus-guests');
+
+            function toggleBusCount() {
+                if (daejeonBusYes.checked) {
+                    busCountWrapper.classList.remove('hidden');
+                    busGuestsSelect.value = "1";
+                } else {
+                    busCountWrapper.classList.add('hidden');
+                    busGuestsSelect.value = "0";
+                }
+            }
+
+            daejeonBusYes.addEventListener('change', toggleBusCount);
+            daejeonBusNo.addEventListener('change', toggleBusCount);
+        });
+    </script>
+</body>
+</html>
+
+

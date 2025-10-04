@@ -1,0 +1,313 @@
+/* ======================================================= */
+/* ==================== 기본 & 공통 스타일 ================= */
+/* ======================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+body, h1, h2, h3, p, div, fieldset, legend, input, button, textarea, label, select { margin: 0; padding: 0; }
+
+body {
+    font-family: "Noto Serif KR", serif;
+    background-color: #fdfdfd;
+    color: #333;
+    line-height: 1.8;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+.section {
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background-color: #eee;
+    width: 85%;
+    margin: 0 auto;
+}
+
+/* ======================================================= */
+/* ==================== 섹션별 상세 스타일 ================= */
+/* ======================================================= */
+
+/* --- 메인 --- */
+.main { position: relative; padding: 0; }
+.main-photo { width: 100%; height: auto; display: block; }
+.main-text { position: absolute; bottom: 40px; left: 0; right: 0; color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); }
+.main h1 { font-size: 2.5rem; font-weight: 500; }
+.main p { font-size: 1.1rem; margin-top: 10px; }
+
+/* --- 신랑 & 신부 --- */
+.groom-bride { display: flex; justify-content: space-around; padding: 40px 30px 20px 30px; }
+.groom-bride h3 { font-size: 1.2rem; margin-bottom: 5px; }
+
+/* --- 달력 --- */
+.calendar-section { padding-top: 20px; }
+#calendar-wrapper { max-width: 380px; margin: 0 auto 25px auto; border: 1px solid #eee; border-radius: 8px; padding: 20px; background: #fdfdfd; }
+.calendar-header { text-align: center; margin-bottom: 15px; }
+.calendar-header h3 { font-size: 1.3rem; font-weight: 500; color: #333; }
+#calendar table { width: 100%; border-collapse: collapse; }
+#calendar th, #calendar td { text-align: center; padding: 10px 0; font-size: 1rem; }
+#calendar th { font-weight: 500; color: #888; padding-bottom: 10px; }
+#calendar td { font-weight: 300; }
+#calendar td.wedding-day { font-weight: 700; }
+#calendar td.wedding-day div { background-color: #e6a8a8; color: #fff; width: 36px; height: 36px; line-height: 36px; border-radius: 50%; margin: 0 auto; }
+#calendar td.other-month { color: #ccc; }
+.calendar-btn { display: inline-block; text-decoration: none; background-color: #f7f7f7; border: 1px solid #ddd; color: #333; padding: 10px 20px; border-radius: 8px; font-weight: 500; font-size: 0.95rem; transition: background-color 0.2s; }
+.calendar-btn:hover { background-color: #e9e9e9; }
+.calendar-btn span { margin-right: 8px; }
+
+/* --- 갤러리 (바둑판 + 가로 스크롤) --- */
+.gallery-scroll-container {
+    overflow-x: auto;
+    padding-bottom: 15px;
+    -webkit-overflow-scrolling: touch; /* iOS에서 부드러운 스크롤 효과 */
+}
+/* 스크롤바 디자인 (선택사항) */
+.gallery-scroll-container::-webkit-scrollbar { height: 6px; }
+.gallery-scroll-container::-webkit-scrollbar-track { background: #f1f1f1; }
+.gallery-scroll-container::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+.gallery-scroll-container::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+.gallery-content {
+    display: inline-flex; /* 자식 요소(바둑판)들을 한 줄로 나열 */
+    gap: 20px; /* 바둑판과 바둑판 사이의 간격 */
+}
+
+.gallery-custom-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 2px;
+    background-color: #fff;
+    width: calc(100vw - 80px); /* 화면 너비에 맞춰 조정 (양쪽 여백 고려) */
+    max-width: 400px;
+    flex-shrink: 0;
+}
+
+.gallery-item {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 1 / 1; /* 정사각형 비율 유지 */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item-large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.full-size-item {
+    grid-column: 1 / -1; 
+    grid-row: 1 / -1;
+}
+
+/* --- 오시는 길 --- */
+.location .transport-info { margin: 30px auto; padding: 20px; background-color: #f9f9f9; border-radius: 8px; max-width: 90%; }
+.location .transport-item { display: flex; align-items: center; justify-content: center; }
+.location .transport-icon { font-size: 2rem; margin-right: 15px; }
+.location .transport-item p { text-align: left; line-height: 1.7; font-size: 0.95rem; }
+.location .transport-item p strong { font-size: 1.05rem; color: #333; }
+.location .transport-item p span { font-size: 0.9rem; color: #888; }
+#map { width: 100%; height: 250px; margin-top: 20px; border: 1px solid #eee; }
+.map-buttons { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+.map-btn { display: inline-block; padding: 10px 20px; text-decoration: none; color: #fff; border-radius: 5px; font-weight: bold; }
+.map-btn.naver { background-color: #03C75A; }
+.map-btn.kakao { background-color: #FEE500; color: #191919; }
+
+/* --- 연락처 --- */
+.contact-row { margin-bottom: 25px; }
+.contact-row:last-child { margin-bottom: 0; }
+.contact-row > p { font-weight: bold; font-size: 1.1rem; margin-bottom: 15px; text-align: left; }
+.parents-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.parents {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    align-items: center;
+    gap: 10px; 
+    background-color: #f9f9f9;
+    padding: 15px 20px;
+    border-radius: 8px;
+}
+.parents p {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 0;
+    word-break: keep-all;  
+    text-align: center;
+}
+.call-buttons {
+    display: flex;
+    gap: 15px; /* 아이콘 사이 간격 */
+}
+.call-btn, .sms-btn {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #555;
+    margin-left: 0;
+}
+
+/* --- 계좌번호 --- */
+.account-info button { font-family: inherit; background: #8e8e8e; color: white; border: none; padding: 12px 20px; border-radius: 5px; cursor: pointer; margin: 10px 0; width: 80%; }
+.account-details { display: none; background-color: #f7f7f7; padding: 15px; margin: 10px auto; border-radius: 5px; width: 90%; }
+.copy-btn { background: #a9a9a9 !important; width: auto !important; padding: 5px 15px !important; margin-left: 10px !important; }
+
+
+/* --- RSVP 폼 (수정됨) --- */
+.rsvp { background-color: #fcfcfc; }
+.rsvp > p { margin-bottom: 25px; font-size: 1rem; color: #666; }
+#rsvp-form { display: flex; flex-direction: column; gap: 20px; text-align: left; }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: #555; font-size: 1rem; }
+.form-group input[type="text"], .form-group input[type="number"], .form-group select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-family: inherit; font-size: 1rem; }
+
+#rsvp-form fieldset { border: none; padding: 0; margin: 0 0 10px 0; }
+#rsvp-form legend { font-size: 1.2rem; font-weight: bold; color: #333; width: 100%; text-align: left; padding-bottom: 15px; border-bottom: 1px solid #eee; margin-bottom: 20px; }
+
+.submit-btn { font-family: inherit; background: #6a7a62; color: white; border: none; padding: 15px 20px; border-radius: 5px; cursor: pointer; font-size: 1.1rem; font-weight: bold; transition: background-color 0.2s; margin-top: 10px; }
+.submit-btn:hover { background: #566450; }
+
+.label-detail {
+    font-size: 0.9rem;
+    font-weight: 700; /* 굵게 */
+    color: #c06c5d;   /* 색상 변경 */
+    margin-left: 8px;
+}
+
+/* ======================================================= */
+/* ====== 여기가 라디오 버튼을 버튼 스타일로 만드는 핵심 부분 ====== */
+/* ======================================================= */
+.choice-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2개의 버튼을 가로로 나란히 배치 */
+    gap: 8px;
+}
+.choice-group input[type="radio"] { 
+    display: none; /* 실제 라디오 버튼(동그라미)은 숨김 처리 */
+}
+.choice-group label {
+    /* label 태그를 버튼처럼 보이게 스타일링 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 12px 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #fff;
+    transition: background-color 0.2s, border-color 0.2s;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.choice-group input[type="radio"]:checked + label {
+    /* 선택된 버튼의 스타일 변경 */
+    background-color: #6a7a62;
+    color: white;
+    border-color: #566450;
+    font-weight: bold;
+}
+/* ======================================================= */
+
+/* 탑승 인원 선택 (숨김 처리) */
+.count-group.hidden { display: none; }
+.count-group {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed #ddd;
+}
+.form-group select {
+    background-color: white;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 10px;
+}
+.form-group select {
+    background-color: white;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* 커스텀 화살표 아이콘 */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 10px;
+}
+
+
+/* --- 꼬리말 --- */
+.footer { background-color: #f7f7f7; padding: 30px; font-size: 0.9rem; color: #777; margin-top: 20px; }
+
+/* ======================================================= */
+/* =================== 유틸리티 & 애니메이션 =============== */
+/* ======================================================= */
+.toast-popup { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background-color: rgba(0, 0, 0, 0.75); color: white; padding: 12px 25px; border-radius: 25px; z-index: 2000; opacity: 0; visibility: hidden; transition: opacity 0.5s, visibility 0.5s; }
+.toast-popup.show { opacity: 1; visibility: visible; }
+.toast-popup.error { background-color: #d9534f; }
+.scroll-animate { opacity: 0; transform: translateY(50px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.scroll-animate.visible { opacity: 1; transform: translateY(0); }
+
+/* ======================================================= */
+/* ===================== 다크 모드 스타일 ================== */
+/* ======================================================= */
+@media (prefers-color-scheme: dark) {
+    body { background-color: #121212; color: #e0e0e0; }
+    .container { background-color: #1e1e1e; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+    .section-title, .contact-row > p, #rsvp-form legend { color: #ffffff; }
+    .divider { background-color: #3a3a3a; }
+    .parents, .location .transport-info, .account-details { background-color: #2c2c2c; }
+    .parents p, .call-btn, .sms-btn { color: #e0e0e0; }
+    .location .transport-item p span, .rsvp > p { color: #b0b0b0; }
+    .rsvp { background-color: #1e1e1e; }
+    #rsvp-form legend { border-bottom-color: #3a3a3a; }
+    .form-group label { color: #e0e0e0; }
+    .form-group input[type="text"], .form-group input[type="number"] { background-color: #2c2c2c; color: #e0e0e0; border-color: #4a4a4a; }
+    .footer { background-color: #121212; color: #888; }
+    #calendar-wrapper { background: #2c2c2c; border-color: #3a3a3a; }
+    .calendar-header h3, #calendar th { color: #ccc; }
+    #calendar td.wedding-day div { color: #1e1e1e; }
+    #calendar td.other-month { color: #555; }
+    .calendar-btn { background-color: #2c2c2c; border-color: #4a4a4a; color: #e0e0e0; }
+    .calendar-btn:hover { background-color: #3a3a3a; }
+    .gallery-scroll-container::-webkit-scrollbar-track { background: #2c2c2c; }
+    .gallery-scroll-container::-webkit-scrollbar-thumb { background: #555; }
+    .gallery-scroll-container::-webkit-scrollbar-thumb:hover { background: #777; }
+    /* RSVP 폼 다크모드 */
+    .label-detail { color: #f7c9c2; }
+    .choice-group label { background-color: #2c2c2c; border-color: #4a4a4a; }
+    .choice-group input[type="radio"]:checked + label { background-color: #6a7a62; color: #ffffff; border-color: #6a7a62; }
+    .form-group select { background-color: #2c2c2c; color: #e0e0e0; border-color: #4a4a4a; background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23bbb%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'); }
+}
+@media (max-width: 420px) {
+    .parents {
+        flex-direction: column; /* 세로로 쌓음 */
+        justify-content: center; /* 가운데 정렬로 변경 */
+        gap: 15px; /* 세로로 쌓였을 때의 간격 */
+    }
+}
+
+
